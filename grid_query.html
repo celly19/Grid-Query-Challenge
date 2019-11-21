@@ -1,0 +1,383 @@
+<!--Created by Celine Murakami-->
+<!doctype html>
+<html>
+    <head>
+        <title>Grid Query Challenge</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+          <style>
+              
+            /*print screen*/
+               /*desktop*/
+              @media print, screen and (min-width: 550px){
+                  nav {
+                      display: none;
+                  }
+                  
+                  footer {                                                  
+                      grid-template-columns: 1fr 1fr;
+                     display: grid;
+
+                    }
+              
+                      footer p{
+                        grid-column: 1;
+                        grid-row: 1;
+                        border: 1px solid white;
+
+                      }
+              
+                      footer li{
+                        display: grid;
+                        list-style: none;
+                        border: 1px solid white;
+
+                      }
+                  footer ul{
+                        margin: 5px;
+                        padding: 0;
+                      }
+              }
+
+              
+              
+              /*mobile*/
+              @media print, screen and (max-width: 550px){
+                  h1{
+                     text-align: center;
+
+              }
+                  
+                  h2{
+                  text-align: center;
+              }
+                  
+                  footer {
+                        grid-template-columns: 1fr 1fr 1fr;
+                    }
+              
+                      footer p{
+                        grid-column: 1 / span 2;
+                        grid-row: 1;
+                        width: 80%;
+                        margin: 10px;
+
+                      }
+              
+            
+                      footer li{
+                        grid-column: 3;
+                        grid-row: 1;
+                  }}
+                  
+                  
+             /*ALL version*/
+              
+              
+              body{
+                  font:serif;
+              }  
+             header {
+              grid-area:header;
+                border:1px solid rgba(255,0,0,1);
+                background-color:rgba(255,0,0,.25);
+                padding:1ex;
+                border-radius:10px;
+                     }
+              
+              
+               main {
+                border:1px solid rgba(0,0,255,1);
+                background-color:rgba(0,0,255,.25);
+                padding:1ex;
+                border-radius:10px;
+/*                width: 97%;*/
+            }
+              
+              nav {
+                  display:block;
+                        border:1px solid rgba(0,128,0,1);
+                        background-color:rgba(0,255,0,.25);
+                        padding:1ex;
+                        width:180px;
+                        border-radius:10px;
+                        margin: 0;
+                        padding: 0;
+                         }
+              nav li{
+                        position: relative;
+                        border: 1px solid green;
+                        border-radius:10px;
+                        margin: 0px 0px;
+                        padding: 3px;
+                        list-style: none;
+                        background-color:rgba(225,255,225,1) ;
+                      }
+              
+                      nav ul{
+                        margin: 0px;
+                        padding: 0;
+                      }
+              
+              footer {
+                        border:1px solid rgba(128,128,0,1);
+                        background-color:rgba(255,255,0,.25);
+                        padding:1ex;
+                        border-radius:10px;
+                        grid-area:footer;
+                        display: grid;
+                        margin: 0;
+                        padding: 0;
+                    }
+              
+                      footer p{
+                        position: relative;
+                        top:25%;
+                        border: 1px solid black;
+                        border-radius:10px;
+                        text-align: center;
+                        vertical-align:middle;
+                        height: 25px;
+                        padding: 5px;
+                        width:60%;
+                        background-color:rgba(255,255,211,1) ;
+                          min-width: 150px;
+                          max-width: 150px;
+
+
+                      }
+              
+            
+                      footer li{
+                        position: relative;
+                        margin: 0px 0px;
+                        padding: 0px;
+                        grid-column: 2;
+                        grid-row: 1;
+                        width: 90%;
+                        text-align: center;
+                        height: 20px;
+                        background-color:rgba(255,255,211,1) ;
+                        list-style:square;
+
+                      }
+              
+              
+                      
+              
+              
+              
+              /*mobile*/
+              @media only screen and (max-width: 550px) {
+                  
+                  
+                  h1{
+                     text-align: center;
+
+              }
+                  
+                  h2{
+                  text-align: center;
+              }
+                  
+                  
+                  body {
+                      grid-gap: 8px;
+                      display: grid;
+                    grid-template-areas: 
+                        "header header"
+                        "nav nav"
+                        "content content"
+                        "footer footer";
+                  }
+                  
+
+            nav {
+              grid-area:nav;
+                border:1px solid rgba(0,128,0,1);
+                background-color:rgba(0,255,0,.25);
+                width: auto;
+                border-radius:10px;
+            }
+
+                  
+                  nav ul{
+                      margin: 10px;
+                  }
+            main {
+                
+                grid-area:content;
+/*                width: 97%;*/
+            }
+           
+                  
+                  /*https://www.w3schools.com/html/tryit.asp?filename=tryhtml_lists_menu*/
+                  
+                  
+                  nav li{
+                      display: inline-block;
+                      width:22%;
+                     text-align: center;
+
+                  }
+                  
+                  
+                  
+                  
+                  footer {
+                        grid-template-columns: 1fr 1fr 1fr;
+                    }
+              
+                      footer p{
+                        grid-column: 1 / span 2;
+                        grid-row: 1;
+                        vertical-align:middle;
+                        line-height: normal;
+
+                      }
+              
+            
+                      footer li{
+                        grid-column: 3;
+                        grid-row: 1;
+                      }
+                   
+              }
+             
+              
+              /*desktop version*/
+              @media screen and (min-width: 550px) {
+                
+                  
+                  
+                body {
+                    grid-gap: 8px;
+                    display: grid;
+                    grid-template-areas: 
+                        "header header"
+                        "left main"
+                        "footer footer";
+                  }
+                  
+                  
+
+            nav {
+                       grid-area:left;
+                         }
+
+              
+              
+                      nav li{
+                        display: grid;
+                        width: auto;
+                        margin: 10px;
+                        padding:10px;
+                      }
+
+
+            main {
+               
+                grid-area:main;
+/*                width: 97%;*/
+            }
+                  
+            footer {  
+                grid-template-columns: 1fr 1fr;
+                display: grid;
+                        
+                    }
+              
+                      footer p{
+                        left: 25%;
+                        grid-column: 1;
+                        grid-row: 1;
+                        width: 40%;
+                        vertical-align:middle;
+                        
+
+                      }
+              
+                      footer li{
+                        border: 1px solid black;
+                        border-radius:10px;
+                        list-style: none;
+                        margin: 10px;
+                        padding: 10px;
+
+                      }
+                  footer ul{
+                        margin: 5px;
+                        padding: 0;
+                  }
+              
+              }
+
+            /* You may add style information aove.
+                Remember: You may NOT touch the markup! */
+
+              @media print {
+                  nav {
+                      display: none;
+                  }
+                  
+                  footer {                                                  
+                      border: 1px solid white;
+                    
+
+                    }
+              
+                      footer p{
+                        border: 1px solid white;
+                      }
+              
+                      footer li{
+                        border: 1px solid white;
+
+                      }
+                  
+                  header{
+                        border: 1px solid white;
+
+                  }
+                  main{
+                      border: 1px solid white;
+
+                  }
+              }
+
+             
+              
+        </style>
+  </head>
+    <body>
+        <header>
+            <h1>Heading</h1>
+        </header>
+        <main>
+            <h2>Main Content</h2>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eleifend felis gravida eros molestie, sed egestas enim aliquet. Praesent suscipit pretium diam, eu placerat mi fermentum sed. Nulla eu nisl in ligula iaculis faucibus in a mi. Nulla fermentum massa odio, ut convallis dui sagittis sagittis. Cras at risus nec libero feugiat convallis. Nulla commodo mauris sed mauris finibus, vitae porta ligula imperdiet. Etiam tortor erat, dapibus at interdum quis, molestie et tortor. Phasellus consectetur malesuada ex a tincidunt. Cras ut tellus et erat volutpat dictum. Donec sed nisi enim. Vestibulum lacinia, lacus dignissim mattis rutrum, mi tellus dapibus nisl, id mollis justo lacus non eros. Praesent mattis sagittis diam eget imperdiet.</p>
+
+            <p>Sed ut consequat dui, eget volutpat lectus. Integer congue pharetra sapien eu pellentesque. Duis ut molestie diam, id faucibus ligula. Maecenas lobortis volutpat velit, eu ultrices sapien porta ut. Donec volutpat, libero non accumsan suscipit, urna ante consequat sapien, sit amet gravida dolor massa ac dui. Cras facilisis blandit dui, non rhoncus massa dictum et. Morbi in tempor mauris, id viverra diam. Donec scelerisque, eros eu pharetra efficitur, urna sem sodales mi, at molestie nulla sapien sit amet felis. Sed et maximus turpis.</p>
+
+            <p>Praesent eleifend malesuada eros, in finibus justo fermentum non. Quisque eu vehicula risus, a ultrices lorem. Vestibulum faucibus risus quis placerat dictum. Fusce laoreet, enim eu placerat rutrum, magna lacus venenatis ipsum, ac egestas orci eros a dolor. Vivamus pharetra id quam et auctor. Nulla at nulla ut dui scelerisque hendrerit nec non magna. Proin egestas sed turpis vel mollis. Suspendisse ut luctus magna. Nullam pulvinar at justo ac cursus. Vestibulum a finibus magna. Suspendisse libero sem, sollicitudin et pharetra sit amet, ornare a neque.</p>
+            <p>Sed posuere nisi sed justo malesuada suscipit at eu tellus. Nullam pellentesque eleifend urna, eu tristique mi volutpat vel. Vestibulum consectetur placerat lectus, ac sollicitudin purus pretium sed. Sed nibh justo, pellentesque id risus nec, accumsan pulvinar quam. Donec massa tortor, rhoncus mollis orci a, blandit pretium sapien. Phasellus hendrerit interdum tellus eget posuere. Quisque pretium orci nibh, nec gravida eros luctus non. Praesent semper tortor at eros ultricies, et luctus arcu sollicitudin. Duis ut porttitor ipsum, non aliquam turpis. Aliquam facilisis ligula vitae tortor sodales scelerisque. Donec consectetur sem a tellus imperdiet elementum.</p>
+        </main>
+        <nav>
+            <ul>
+                <li><a href="#">Link 1</a></li>
+                <li><a href="#">Link 2</a></li>
+                <li><a href="#">Link 3</a></li>
+                <li><a href="#">Link 4</a></li>
+            </ul>
+        </nav>
+        <footer>
+            <ul>
+                <li><a href="#">Footer Link 1</a></li>
+                <li><a href="#">Footer Link 2</a></li>
+                <li><a href="#">Footer Link 3</a></li>
+                <li><a href="#">Footer Link 4</a></li>
+            </ul>
+            <p>&copy; Copyright Statement</p>
+        </footer>
+    </body>
+</html>
